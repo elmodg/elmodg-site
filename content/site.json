@@ -1,0 +1,174 @@
+{
+  "seo": {
+    "title": "Elmo DG — Autoridade Que Vende"
+  },
+  "brand": {
+    "name": "Elmo DG",
+    "logo": {
+      "src": "/content/media/logo.png",
+      "alt": "Logo Elmo DG"
+    }
+  },
+  "hero": {
+    "kicker": "ELMO DG",
+    "title": "Autoridade Que Vende",
+    "subtitle": "Construímos marcas que parecem maiores, mais confiáveis e mais desejadas.",
+    "ctaLabel": "Solicitar Diagnóstico Estratégico",
+    "chip1": "Percepção • Autoridade • Conversão",
+    "chip2": "Estratégia que parece grande — e vende como tal",
+    "video": {
+      "mp4": "/content/media/hero.mp4",
+      "poster": "/content/media/hero-poster.jpg"
+    }
+  },
+  "positioning": {
+    "kicker": "CONCEITO",
+    "title": "Empresas não perdem vendas por falta de anúncios.",
+    "body": "Perdem porque não parecem confiáveis o suficiente para vender caro. Quando a percepção é fraca, o mercado negocia, compara e adia. Quando a percepção é sólida, a decisão acontece com menos fricção — e com mais margem.",
+    "footer": "A Elmo DG existe para elevar percepção: tornar a marca mais nítida, mais respeitada e mais desejada."
+  },
+  "capabilities": {
+    "kicker": "O QUE FAZEMOS",
+    "title": "O que entregamos não é “serviço”. É percepção.",
+    "intro": "Capacidades estratégicas desenhadas para eliminar comparação, aumentar confiança e sustentar preço.",
+    "items": [
+      {
+        "tag": "Posicionamento de Marca",
+        "title": "Clareza que impõe respeito",
+        "text": "Mensagem, promessa e presença com direção. A marca deixa de explicar demais e começa a ser entendida rápido."
+      },
+      {
+        "tag": "Conteúdo de Autoridade",
+        "title": "Reels e vídeos que constroem confiança",
+        "text": "Narrativa visual e editorial que faz o público sentir segurança — antes do orçamento, antes da reunião."
+      },
+      {
+        "tag": "Estratégia de Crescimento",
+        "title": "Demanda com padrão alto",
+        "text": "Direção para atrair clientes melhores sem depender de volume ou desconto. Menos ruído, mais decisão."
+      }
+    ]
+  },
+  "method": {
+    "kicker": "MÉTODO PRÓPRIO",
+    "title": "Método DG de Autoridade",
+    "intro": "Um processo que organiza percepção em etapas claras — e elimina comparação com concorrentes.",
+    "steps": [
+      {
+        "title": "Diagnóstico de Percepção",
+        "text": "Identificamos onde a marca perde confiança e por quê — e qual ajuste muda a leitura do mercado."
+      },
+      {
+        "title": "Construção de Imagem Forte",
+        "text": "Identidade, linguagem e presença com padrão alto — para a marca parecer maior do que o tamanho atual."
+      },
+      {
+        "title": "Amplificação Estratégica",
+        "text": "Conteúdo e campanhas com direção. A marca ganha alcance com consistência e intenção."
+      },
+      {
+        "title": "Conversão por Confiança",
+        "text": "Jornada e oferta alinhadas à autoridade construída — para preço parar de ser discussão."
+      }
+    ]
+  },
+  "proof": {
+    "kicker": "PROVA SOCIAL",
+    "title": "Resultados que aparecem na percepção",
+    "intro": "Frases curtas. Narrativas de transformação. Antes/depois conceitual — sem ruído e sem exagero.",
+    "items": [
+      {
+        "quote": "“De comum a referência — sem aumentar complexidade.”",
+        "metaLeft": "Transformação",
+        "metaRight": "Percepção → Autoridade",
+        "before": "parece pequeno",
+        "after": "parece sólido"
+      },
+      {
+        "quote": "“Quando a imagem sobe, o preço deixa de ser discussão.”",
+        "metaLeft": "Impacto",
+        "metaRight": "Confiança → Margem",
+        "before": "negociação",
+        "after": "decisão"
+      },
+      {
+        "quote": "“A marca parou de explicar demais. Começou a impor clareza.”",
+        "metaLeft": "Leitura",
+        "metaRight": "Ruído → Nitidez",
+        "before": "parece amador",
+        "after": "parece premium"
+      },
+      {
+        "quote": "“Presença com padrão alto — e calma de quem controla o jogo.”",
+        "metaLeft": "Posição",
+        "metaRight": "Controle → Desejo",
+        "before": "mais do mesmo",
+        "after": "acima da média"
+      }
+    ]
+  },
+  "fit": {
+    "kicker": "FILTRO",
+    "title": "Para empresas que querem ser levadas a sério",
+    "intro": "A Elmo DG trabalha com negócios que entendem que imagem forte não é estética: é confiança.",
+    "items": [
+      {
+        "title": "Querem crescer com imagem forte",
+        "text": "Consistência visual e mensagem clara para sustentar evolução."
+      },
+      {
+        "title": "Querem vender com autoridade",
+        "text": "Preço vira consequência quando a percepção é sólida."
+      },
+      {
+        "title": "Querem ser desejadas, não comparadas",
+        "text": "Marca com presença de líder reduz competição por preço."
+      },
+      {
+        "title": "Linha de corte",
+        "text": "Se você busca “o mais barato” ou “só posts”, a Elmo DG não é o caminho.",
+        "highlight": true
+      }
+    ]
+  },
+  "portfolio": {
+    "kicker": "PORTFÓLIO",
+    "title": "Reels e vídeos selecionados",
+    "intro": "Uma amostra de linguagem visual e ritmo editorial. Clique para assistir em tela cheia.",
+    "items": [
+      {
+        "type": "mp4",
+        "title": "Reel — Autoridade em 15s",
+        "url": "/content/media/reels/reel-01.mp4",
+        "thumb": "/content/media/reels/reel-01.jpg"
+      },
+      {
+        "type": "mp4",
+        "title": "Reel — Percepção premium",
+        "url": "/content/media/reels/reel-02.mp4",
+        "thumb": "/content/media/reels/reel-02.jpg"
+      },
+      {
+        "type": "mp4",
+        "title": "Reel — Marca que parece grande",
+        "url": "/content/media/reels/reel-03.mp4",
+        "thumb": "/content/media/reels/reel-03.jpg"
+      }
+    ]
+  },
+  "finalCta": {
+    "kicker": "DIAGNÓSTICO ESTRATÉGICO",
+    "title": "Sua marca já é boa. Está sendo percebida como tal?",
+    "text": "Solicite um diagnóstico estratégico e descubra o que está travando confiança — e como transformar isso em autoridade que vende.",
+    "button": "Solicitar Diagnóstico Estratégico",
+    "note": "Resposta em horário comercial. Comunicação objetiva."
+  },
+  "footer": {
+    "brand": "Elmo DG",
+    "slogan": "Autoridade Que Vende",
+    "desc": "Marketing digital & comunicação visual com foco em percepção, confiança e conversão.",
+    "location": "Atendimento online",
+    "instagramUrl": "https://www.instagram.com/elmodgcom/",
+    "copyright": "© Elmo DG. Todos os direitos reservados."
+  }
+}
