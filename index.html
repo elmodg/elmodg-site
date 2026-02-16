@@ -1,12 +1,359 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elmo DG - Autoridade Que Vende</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elmo DG - Autoridade Que Vende</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B5CF6',
+            secondary: '#EC4899',
+            dark: '#1E293B'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
+    
+    .hero-pattern {
+      background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-card {
+      transition: all 0.3s ease;
+      border-bottom: 4px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-bottom: 4px solid #8B5CF6;
+    }
+    
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-3px);
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary">
+        Elmo<span class="text-secondary">DG</span>
+      </a>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="text-dark hover:text-primary font-medium">Home</a>
+        <a href="#services" class="text-dark hover:text-primary font-medium">Serviços</a>
+        <a href="https://www.instagram.com/elmodg.com.br/" target="_blank" class="text-dark hover:text-primary font-medium">Portfólio</a>
+        <a href="#contact" class="text-dark hover:text-primary font-medium">Contato</a>
+      </nav>
+      
+      <button id="menuToggle" class="md:hidden text-dark">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+      <div class="flex flex-col space-y-4">
+        <a href="#home" class="text-dark hover:text-primary font-medium">Home</a>
+        <a href="#services" class="text-dark hover:text-primary font-medium">Serviços</a>
+        <a href="https://www.instagram.com/elmodg.com.br/" target="_blank" class="text-dark hover:text-primary font-medium">Portfólio</a>
+        <a href="#contact" class="text-dark hover:text-primary font-medium">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-pattern text-white py-20">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          Transforme sua Presença Digital em Resultados Reais
+        </h1>
+        <p class="text-xl mb-8 opacity-90">
+          Estratégias digitais que convertem visitantes em clientes e aumentam seu faturamento.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="#contact" class="bg-white text-primary font-bold py-3 px-8 rounded-full text-center hover:bg-gray-100 transition duration-300">
+            Fale Conosco
+          </a>
+          <a href="https://www.instagram.com/elmodg.com.br/" target="_blank" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full text-center hover:bg-white hover:text-primary transition duration-300">
+            Ver Portfólio
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="relative">
+          <div class="w-64 h-64 md:w-80 md:h-80 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <div class="w-48 h-48 md:w-60 md:h-60 bg-white bg-opacity-30 rounded-full flex items-center justify-center">
+              <div class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center text-primary text-4xl font-bold">
+                ED
+              </div>
+            </div>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-secondary text-white p-4 rounded-full shadow-lg">
+            <i class="fas fa-bolt text-2xl"></i>
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-yellow-400 text-dark p-4 rounded-full shadow-lg">
+            <i class="fas fa-chart-line text-2xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Nossos Serviços</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Soluções completas para impulsionar sua presença digital e gerar resultados mensuráveis
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service Card 1 -->
+        <div class="service-card bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary">
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-laptop-code text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Desenvolvimento Web</h3>
+          <p class="text-gray-600 mb-4">
+            Sites e sistemas personalizados com foco em performance, usabilidade e conversão.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Sites Responsivos</li>
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Lojas Virtuais</li>
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Integrações</li>
+          </ul>
+        </div>
+        
+        <!-- Service Card 2 -->
+        <div class="service-card bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-secondary">
+          <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-bullhorn text-secondary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Marketing Digital</h3>
+          <p class="text-gray-600 mb-4">
+            Estratégias personalizadas para atrair, converter e fidelizar clientes.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Campanhas PPC</li>
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> SEO & Conteúdo</li>
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Automação de Vendas</li>
+          </ul>
+        </div>
+        
+        <!-- Service Card 3 -->
+        <div class="service-card bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-purple-500">
+          <div class="w-16 h-16 bg-purple-500 bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-mobile-alt text-purple-500 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3">Design & Identidade</h3>
+          <p class="text-gray-600 mb-4">
+            Criação de identidade visual e materiais que fortalecem sua marca.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Logo & Branding</li>
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Peças Digitais</li>
+            <li class="flex items-center text-gray-700"><i class="fas fa-check-circle text-green-500 mr-2"></i> Material Impresso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="md:flex">
+          <div class="md:w-1/2 bg-primary p-10 text-white">
+            <h2 class="text-3xl font-bold mb-6">Entre em Contato</h2>
+            <p class="mb-8 opacity-90">
+              Pronto para levar seu negócio ao próximo nível? Vamos conversar sobre como posso te ajudar a alcançar seus objetivos.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-xl mr-4"></i>
+                <span>Rio de Janeiro, RJ</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-phone-alt text-xl mr-4"></i>
+                <span>+55 (21) 99216-6374</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-xl mr-4"></i>
+                <span>contato@elmodg.com.br</span>
+              </div>
+            </div>
+            
+            <div class="mt-10">
+              <h3 class="text-xl font-bold mb-4">Siga nas redes sociais</h3>
+              <div class="flex space-x-4">
+                <a href="https://www.instagram.com/elmodg.com.br/" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center social-icon">
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/lucas-gabriel-de-souza-silveira-soares-363776329/" target="_blank" class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center social-icon">
+                  <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="md:w-1/2 p-10">
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Seu nome">
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="seu@email.com">
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Como posso te ajudar?"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">
+                Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold mb-2">
+            Elmo<span class="text-secondary">DG</span>
+          </h3>
+          <p class="text-gray-400">Autoridade que vende na internet</p>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="https://www.instagram.com/elmodg.com.br/" target="_blank" class="text-gray-400 hover:text-white social-icon">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/lucas-gabriel-de-souza-silveira-soares-363776329/" target="_blank" class="text-gray-400 hover:text-white social-icon">
+            <i class="fab fa-linkedin-in text-xl"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+        <p>&copy; 2026 Elmo DG. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/5521992166374?text=Olá!%20Estou%20vindo%20do%20site%20e%20gostaria%20de%20informações%20sobre%20%5B%20Apague%20e%20digite%20o%20que%20deseja%20saber%20%5D" target="_blank" class="whatsapp-float">
+    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+      <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </div>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // In a real application, you would send this data to a server
+      console.log({ name, email, message });
+      
+      // Show success message
+      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      
+      // Reset form
+      contactForm.reset();
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
 </html>
+
