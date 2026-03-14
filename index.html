@@ -26,8 +26,12 @@
                             black: '#0a0a0a',
                             dark: '#111111',
                             gray: '#1a1a1a',
-                            lime: '#a3e635',
-                            'lime-dark': '#84cc16',
+                            // NOVA PALETA BASEADA NA LOGO
+                            primary: '#B91C1C',      // Vermelho bordô principal (da logo)
+                            'primary-light': '#DC2626', // Vermelho mais vibrante para hover
+                            'primary-dark': '#991B1B',  // Vermelho mais escuro
+                            accent: '#FFFFFF',       // Branco (seta da logo)
+                            'accent-warm': '#FEF2F2', // Vermelho muito claro para backgrounds
                             white: '#ffffff',
                             muted: '#a1a1aa',
                             whatsapp: '#25D366'
@@ -40,7 +44,8 @@
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'float': 'float 6s ease-in-out infinite',
                         'glow': 'glow 2s ease-in-out infinite alternate',
-                        'bounce-slow': 'bounce 2s infinite'
+                        'bounce-slow': 'bounce 2s infinite',
+                        'flash': 'flash 2s ease-in-out infinite alternate'
                     },
                     keyframes: {
                         float: {
@@ -48,8 +53,13 @@
                             '50%': { transform: 'translateY(-20px)' }
                         },
                         glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(163, 230, 53, 0.3)' },
-                            '100%': { boxShadow: '0 0 40px rgba(163, 230, 53, 0.6)' }
+                            '0%': { boxShadow: '0 0 20px rgba(185, 28, 28, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(185, 28, 28, 0.6)' }
+                        },
+                        flash: {
+                            '0%': { opacity: '1' },
+                            '50%': { opacity: '0.8' },
+                            '100%': { opacity: '1' }
                         }
                     }
                 }
@@ -75,8 +85,16 @@
             color: #ffffff;
             overflow-x: hidden;
         }
+        /* NOVO GRADIENTE BASEADO NA LOGO */
         .gradient-text {
-            background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%);
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 50%, #991B1B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* GRADIENTE SECUNDÁRIO - RAIO/SETA */
+        .gradient-text-light {
+            background: linear-gradient(135deg, #ffffff 0%, #FECACA 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -86,11 +104,37 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+        /* NOVO GLOW VERMELHO */
         .glow-border {
-            box-shadow: 0 0 30px rgba(163, 230, 53, 0.2);
+            box-shadow: 0 0 30px rgba(185, 28, 28, 0.3);
         }
         .whatsapp-glow {
             box-shadow: 0 0 30px rgba(37, 211, 102, 0.4);
+        }
+        /* EFEITO RAIO/SETA DA LOGO */
+        .lightning-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .lightning-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg);
+            animation: lightning 3s ease-in-out infinite;
+        }
+        @keyframes lightning {
+            0%, 100% { transform: translateX(-100%) rotate(30deg); }
+            50% { transform: translateX(100%) rotate(30deg); }
         }
         .noise::before {
             content: "";
@@ -119,6 +163,11 @@
             height: 100%;
             object-fit: cover;
         }
+        /* BORDA VERMELHA ESTILO LOGO */
+        .logo-border {
+            border: 2px solid #B91C1C;
+            box-shadow: 0 0 20px rgba(185, 28, 28, 0.4);
+        }
         @media (prefers-reduced-motion: reduce) {
             * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
         }
@@ -135,16 +184,19 @@
     </a>
 
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-40 glass border-b border-white/5">
+    <header class="fixed top-0 left-0 right-0 z-40 glass border-b border-brand-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo Dinâmica -->
                 <div class="flex items-center gap-3" data-aos="fade-down" id="logoContainer">
                     <img src="assets/logo.png" alt="Elmo DG" class="h-10 w-auto" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex'">
-                    <div id="logoFallback" class="w-10 h-10 bg-brand-black rounded-full flex items-center justify-center border-2 border-brand-lime glow-border hidden">
-                        <span class="text-brand-lime font-bold text-xl">e</span>
+                    <!-- FALLBACK COM CORES DA NOVA LOGO -->
+                    <div id="logoFallback" class="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center border-2 border-white logo-border hidden relative overflow-hidden">
+                        <span class="text-white font-bold text-xl relative z-10">e</span>
+                        <!-- Efeito raio -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent"></div>
                     </div>
-                    <span class="text-2xl font-bold tracking-tight">Elmo <span class="text-brand-lime">DG</span></span>
+                    <span class="text-2xl font-bold tracking-tight">Elmo <span class="text-brand-primary">DG</span></span>
                 </div>
                 
                 <!-- CTA Header -->
@@ -166,20 +218,22 @@
                 <video id="heroVideo" autoplay muted loop playsinline poster="assets/video-poster.webp">
                     <source src="assets/hero-video.mp4" type="video/mp4">
                 </video>
-                <div class="absolute inset-0 bg-brand-black/70"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/70 to-brand-primary/20"></div>
             </div>
         </div>
 
         <!-- Fallback se não tiver vídeo -->
         <div id="videoFallback" class="absolute inset-0 z-0 hidden">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-lime/5 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
+            <!-- Efeito raio adicional -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-brand-primary/5 to-transparent rounded-full blur-3xl"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray/80 border border-brand-lime/30 mb-8" data-aos="fade-up">
-                <span class="w-2 h-2 bg-brand-lime rounded-full animate-pulse"></span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray/80 border border-brand-primary/30 mb-8" data-aos="fade-up">
+                <span class="w-2 h-2 bg-brand-primary rounded-full animate-pulse"></span>
                 <span class="text-sm font-medium text-brand-muted">Método validado por empresas B2B</span>
             </div>
 
@@ -197,16 +251,16 @@
             </p>
 
             <!-- Problem Agitation -->
-            <div class="max-w-2xl mx-auto mb-12 p-6 rounded-2xl bg-brand-gray/50 border border-white/10" data-aos="fade-up" data-aos-delay="300">
+            <div class="max-w-2xl mx-auto mb-12 p-6 rounded-2xl bg-brand-gray/50 border border-brand-primary/20" data-aos="fade-up" data-aos-delay="300">
                 <p class="text-lg text-gray-300">
                     💡 <span class="text-white font-medium">Insight cruel:</span> Empresas não perdem vendas por falta de anúncios. 
-                    Perdem porque <span class="text-brand-lime font-semibold">não parecem confiáveis o suficiente</span> para vender caro.
+                    Perdem porque <span class="text-brand-primary font-semibold">não parecem confiáveis o suficiente</span> para vender caro.
                 </p>
             </div>
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12" data-aos="fade-up" data-aos-delay="400">
-                <a href="#diagnostico" class="group relative bg-brand-lime text-brand-black font-bold text-lg py-5 px-10 rounded-full hover:bg-brand-lime-dark transition-all duration-300 hover:scale-105 animate-glow overflow-hidden">
+                <a href="#diagnostico" class="group relative bg-brand-primary text-white font-bold text-lg py-5 px-10 rounded-full hover:bg-brand-primary-light transition-all duration-300 hover:scale-105 animate-glow overflow-hidden lightning-effect">
                     <span class="relative z-10">Solicitar Diagnóstico Estratégico →</span>
                 </a>
                 <a href="#" id="whatsappHero" target="_blank" class="flex items-center gap-3 bg-brand-whatsapp text-white font-bold text-lg py-5 px-8 rounded-full hover:bg-green-600 transition-all duration-300 hover:scale-105 whatsapp-glow">
@@ -220,10 +274,10 @@
             <div class="flex flex-col items-center gap-4" data-aos="fade-up" data-aos-delay="500">
                 <div class="flex -space-x-3" id="provaSocialContainer">
                     <!-- Imagens carregadas dinamicamente do config.js -->
-                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-lime font-bold">+50</div>
+                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-primary font-bold">+50</div>
                 </div>
                 <div class="flex items-center gap-2 text-sm">
-                    <div class="flex text-brand-lime">★★★★★</div>
+                    <div class="flex text-brand-primary">★★★★★</div>
                     <span class="text-gray-400">4.9/5 — Empresas transformadas</span>
                 </div>
             </div>
@@ -231,7 +285,7 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>
@@ -246,33 +300,33 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">01</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-primary/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 rounded-full bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-primary">01</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Diagnóstico de Percepção</h3>
                     <p class="text-gray-400">Mapeamos como seu mercado realmente te vê hoje vs. como deveria te ver.</p>
                 </div>
 
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">02</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-primary/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-full bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-primary">02</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Imagem de Autoridade</h3>
                     <p class="text-gray-400">Criamos identidade visual e verbal que comunica confiança instantânea.</p>
                 </div>
 
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">03</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-primary/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-full bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-primary">03</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Amplificação Estratégica</h3>
                     <p class="text-gray-400">Posicionamos você nos canais certos para ser encontrado pelos clientes certos.</p>
                 </div>
 
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">04</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-primary/30 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-full bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-primary">04</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Conversão por Confiança</h3>
                     <p class="text-gray-400">Sistema de vendas que converte autoridade em receita previsível.</p>
@@ -300,17 +354,17 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 rounded-full bg-brand-lime/10 flex items-center justify-center mb-4 text-3xl">🛡️</div>
+                    <div class="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center mb-4 text-3xl">🛡️</div>
                     <h3 class="font-bold text-lg mb-2">Garantia de Resultado</h3>
                     <p class="text-gray-400 text-sm">Se não houver aumento de percepção em 90 dias, devolvemos 100%</p>
                 </div>
                 <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 rounded-full bg-brand-lime/10 flex items-center justify-center mb-4 text-3xl">🔒</div>
+                    <div class="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center mb-4 text-3xl">🔒</div>
                     <h3 class="font-bold text-lg mb-2">Dados 100% Seguros</h3>
                     <p class="text-gray-400 text-sm">Seus dados e estratégia são confidenciais e protegidos por NDA</p>
                 </div>
                 <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 rounded-full bg-brand-lime/10 flex items-center justify-center mb-4 text-3xl">⚡</div>
+                    <div class="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center mb-4 text-3xl">⚡</div>
                     <h3 class="font-bold text-lg mb-2">Primeiros Sinais em 30 Dias</h3>
                     <p class="text-gray-400 text-sm">Você verá mudança na percepção do mercado no primeiro mês</p>
                 </div>
@@ -320,10 +374,10 @@
 
     <!-- CTA Final / Formulário -->
     <section id="diagnostico" class="py-24 bg-brand-black relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-lime/10 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-primary/10 to-transparent"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="glass rounded-3xl p-8 md:p-12 border border-brand-lime/20 glow-border" data-aos="fade-up">
+            <div class="glass rounded-3xl p-8 md:p-12 border border-brand-primary/20 glow-border" data-aos="fade-up">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl md:text-5xl font-bold mb-4">Solicitar <span class="gradient-text">Diagnóstico Estratégico</span></h2>
                     <p class="text-gray-400 text-lg">Descubra o gap entre como você é visto e como deveria ser visto</p>
@@ -335,22 +389,22 @@
                     
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">Nome completo *</label>
-                        <input type="text" name="nome" required class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" placeholder="Seu nome">
+                        <input type="text" name="nome" required class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all text-white placeholder-gray-500" placeholder="Seu nome">
                     </div>
                     
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">Nome da empresa *</label>
-                        <input type="text" name="empresa" required class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" placeholder="Sua empresa">
+                        <input type="text" name="empresa" required class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all text-white placeholder-gray-500" placeholder="Sua empresa">
                     </div>
                     
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">Email corporativo *</label>
-                        <input type="email" name="email" required class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" placeholder="voce@empresa.com">
+                        <input type="email" name="email" required class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all text-white placeholder-gray-500" placeholder="voce@empresa.com">
                     </div>
 
-                    <button type="submit" id="submitBtn" class="w-full bg-brand-lime text-brand-black font-bold text-lg py-5 rounded-xl hover:bg-brand-lime-dark transition-all duration-300 hover:scale-[1.02] animate-glow flex items-center justify-center gap-2">
-                        <span id="btnText">Quero Meu Diagnóstico Grátis →</span>
-                        <svg id="btnLoader" class="hidden animate-spin h-5 w-5 text-brand-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <button type="submit" id="submitBtn" class="w-full bg-brand-primary text-white font-bold text-lg py-5 rounded-xl hover:bg-brand-primary-light transition-all duration-300 hover:scale-[1.02] animate-glow flex items-center justify-center gap-2 lightning-effect">
+                        <span id="btnText" class="relative z-10">Quero Meu Diagnóstico Grátis →</span>
+                        <svg id="btnLoader" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -370,7 +424,7 @@
                 </form>
 
                 <div class="mt-8 pt-8 border-t border-white/10 text-center">
-                    <p class="text-brand-lime font-semibold mb-2">⚠️ Apenas 3 vagas para diagnóstico esta semana</p>
+                    <p class="text-brand-primary font-semibold mb-2">⚠️ Apenas 3 vagas para diagnóstico esta semana</p>
                     <p class="text-sm text-gray-400">Tempo médio de resposta: 4 horas</p>
                 </div>
             </div>
@@ -378,12 +432,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-brand-black border-t border-white/5">
+    <footer class="py-12 bg-brand-black border-t border-brand-primary/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
                     <img src="assets/logo.png" alt="Elmo DG" class="h-8 w-auto" onerror="this.style.display='none'">
-                    <span class="text-xl font-bold">Elmo <span class="text-brand-lime">DG</span></span>
+                    <span class="text-xl font-bold">Elmo <span class="text-brand-primary">DG</span></span>
                 </div>
                 
                 <div class="text-gray-500 text-sm text-center md:text-right">
@@ -439,7 +493,7 @@
                 });
                 // Adicionar contador
                 const counter = document.createElement('div');
-                counter.className = 'w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center border-2 border-brand-black text-brand-black font-bold text-xs';
+                counter.className = 'w-12 h-12 rounded-full bg-brand-primary flex items-center justify-center border-2 border-brand-black text-white font-bold text-xs';
                 counter.textContent = '+50';
                 provaContainer.appendChild(counter);
             }
