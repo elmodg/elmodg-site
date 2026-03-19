@@ -1,0 +1,2 @@
+# Redirecionamentos opcionais
+/home    /       301
