@@ -23,8 +23,9 @@
                             black: '#0a0a0a',
                             dark: '#111111',
                             gray: '#1a1a1a',
-                            lime: '#a3e635',
-                            'lime-dark': '#84cc16',
+                            red: '#ef4444',         // Vermelho principal
+                            'red-dark': '#dc2626',  // Vermelho escuro
+                            'red-light': '#f87171', // Vermelho claro
                             white: '#ffffff',
                             muted: '#a1a1aa',
                             whatsapp: '#25D366'
@@ -43,8 +44,8 @@
                             '50%': { transform: 'translateY(-20px)' }
                         },
                         glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(163, 230, 53, 0.3)' },
-                            '100%': { boxShadow: '0 0 40px rgba(163, 230, 53, 0.6)' }
+                            '0%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(239, 68, 68, 0.6)' }
                         }
                     }
                 }
@@ -64,7 +65,7 @@
             overflow-x: hidden;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -76,6 +77,9 @@
         }
         .whatsapp-glow {
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        .red-glow {
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
         }
         .noise::before {
             content: "";
@@ -127,10 +131,10 @@
                          alt="Elmo DG" 
                          class="h-10 w-auto object-contain"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="w-10 h-10 bg-brand-black rounded-full items-center justify-center border-2 border-brand-lime hidden">
-                        <span class="text-brand-lime font-bold text-xl">e</span>
+                    <div class="w-10 h-10 bg-brand-black rounded-full items-center justify-center border-2 border-brand-red hidden">
+                        <span class="text-brand-red font-bold text-xl">e</span>
                     </div>
-                    <span class="text-2xl font-bold tracking-tight">Elmo <span class="text-brand-lime">DG</span></span>
+                    <span class="text-2xl font-bold tracking-tight">Elmo <span class="text-brand-red">DG</span></span>
                 </a>
                 
                 <div class="hidden md:flex items-center gap-4">
@@ -147,24 +151,23 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 noise overflow-hidden">
-        <!-- Vídeo de Fundo (Fallback automático se não existir) -->
+        <!-- Vídeo de Fundo -->
         <div class="video-container">
             <video autoplay muted loop playsinline poster="assets/video-poster.jpg">
                 <source src="assets/hero-video.mp4" type="video/mp4">
-                <!-- Fallback: animação CSS se vídeo não carregar -->
             </video>
             <div class="video-overlay"></div>
         </div>
 
-        <!-- Fallback visual se vídeo falhar -->
+        <!-- Fallback visual -->
         <div class="absolute inset-0 z-0 pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-lime/5 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray/80 border border-brand-lime/30 mb-8 backdrop-blur-sm">
-                <span class="w-2 h-2 bg-brand-lime rounded-full animate-pulse"></span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-gray/80 border border-brand-red/30 mb-8 backdrop-blur-sm">
+                <span class="w-2 h-2 bg-brand-red rounded-full animate-pulse"></span>
                 <span class="text-sm font-medium text-brand-muted">Método validado por empresas B2B</span>
             </div>
 
@@ -182,13 +185,13 @@
             <div class="max-w-2xl mx-auto mb-12 p-6 rounded-2xl bg-brand-gray/50 border border-white/10 backdrop-blur-sm">
                 <p class="text-lg text-gray-300">
                     💡 <span class="text-white font-medium">Insight cruel:</span> Empresas não perdem vendas por falta de anúncios. 
-                    Perdem porque <span class="text-brand-lime font-semibold">não parecem confiáveis o suficiente</span> para vender caro.
+                    Perdem porque <span class="text-brand-red font-semibold">não parecem confiáveis o suficiente</span> para vender caro.
                 </p>
             </div>
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                <a href="#diagnostico" class="group relative bg-brand-lime text-brand-black font-bold text-lg py-5 px-10 rounded-full hover:bg-brand-lime-dark transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(163,230,53,0.3)] hover:shadow-[0_0_40px_rgba(163,230,53,0.5)]">
+                <a href="#diagnostico" class="group relative bg-brand-red text-white font-bold text-lg py-5 px-10 rounded-full hover:bg-brand-red-dark transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_40px_rgba(239,68,68,0.5)]">
                     <span>Solicitar Diagnóstico Estratégico →</span>
                 </a>
                 <a href="https://wa.me/5521992166374?text=Olá!%20Estou%20vindo%20do%20site%20e%20gostaria%20de%20mais%20informações." 
@@ -203,13 +206,13 @@
             <!-- Prova Social -->
             <div class="flex flex-col items-center gap-4">
                 <div class="flex -space-x-3">
-                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-lime font-bold text-sm">CT</div>
-                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-lime font-bold text-sm">MF</div>
-                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-lime font-bold text-sm">RL</div>
-                    <div class="w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center border-2 border-brand-black text-brand-black font-bold text-xs">+50</div>
+                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-red font-bold text-sm">CT</div>
+                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-red font-bold text-sm">MF</div>
+                    <div class="w-12 h-12 rounded-full bg-brand-gray flex items-center justify-center border-2 border-brand-black text-brand-red font-bold text-sm">RL</div>
+                    <div class="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center border-2 border-brand-black text-white font-bold text-xs">+50</div>
                 </div>
                 <div class="flex items-center gap-2 text-sm">
-                    <div class="flex text-brand-lime">★★★★★</div>
+                    <div class="flex text-brand-red">★★★★★</div>
                     <span class="text-gray-400">4.9/5 — Empresas transformadas</span>
                 </div>
             </div>
@@ -231,33 +234,33 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">01</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-red/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-red/10 flex items-center justify-center mb-6 group-hover:bg-brand-red/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-red">01</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Diagnóstico de Percepção</h3>
                     <p class="text-gray-400">Mapeamos como seu mercado realmente te vê hoje vs. como deveria te ver.</p>
                 </div>
 
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">02</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-red/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-red/10 flex items-center justify-center mb-6 group-hover:bg-brand-red/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-red">02</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Imagem de Autoridade</h3>
                     <p class="text-gray-400">Criamos identidade visual e verbal que comunica confiança instantânea.</p>
                 </div>
 
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">03</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-red/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-red/10 flex items-center justify-center mb-6 group-hover:bg-brand-red/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-red">03</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Amplificação Estratégica</h3>
                     <p class="text-gray-400">Posicionamos você nos canais certos para ser encontrado pelos clientes certos.</p>
                 </div>
 
-                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-lime/30 transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-full bg-brand-lime/10 flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
-                        <span class="text-2xl font-bold text-brand-lime">04</span>
+                <div class="relative p-8 rounded-2xl bg-brand-gray border border-white/5 hover:border-brand-red/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-full bg-brand-red/10 flex items-center justify-center mb-6 group-hover:bg-brand-red/20 transition-colors">
+                        <span class="text-2xl font-bold text-brand-red">04</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Conversão por Confiança</h3>
                     <p class="text-gray-400">Sistema de vendas que converte autoridade em receita previsível.</p>
@@ -271,17 +274,17 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-brand-lime/10 flex items-center justify-center mb-4 text-3xl">🛡️</div>
+                    <div class="w-16 h-16 rounded-full bg-brand-red/10 flex items-center justify-center mb-4 text-3xl">🛡️</div>
                     <h3 class="font-bold text-lg mb-2">Garantia de Resultado</h3>
                     <p class="text-gray-400 text-sm">Se não houver aumento de percepção em 90 dias, devolvemos 100%</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-brand-lime/10 flex items-center justify-center mb-4 text-3xl">🔒</div>
+                    <div class="w-16 h-16 rounded-full bg-brand-red/10 flex items-center justify-center mb-4 text-3xl">🔒</div>
                     <h3 class="font-bold text-lg mb-2">Dados 100% Seguros</h3>
                     <p class="text-gray-400 text-sm">Seus dados e estratégia são confidenciais e protegidos por NDA</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div class="w-16 h-16 rounded-full bg-brand-lime/10 flex items-center justify-center mb-4 text-3xl">⚡</div>
+                    <div class="w-16 h-16 rounded-full bg-brand-red/10 flex items-center justify-center mb-4 text-3xl">⚡</div>
                     <h3 class="font-bold text-lg mb-2">Primeiros Sinais em 30 Dias</h3>
                     <p class="text-gray-400 text-sm">Você verá mudança na percepção do mercado no primeiro mês</p>
                 </div>
@@ -289,21 +292,19 @@
         </div>
     </section>
 
-    <!-- FORMULÁRIO NETLIFY (Funciona automaticamente!) -->
+    <!-- FORMULÁRIO NETLIFY -->
     <section id="diagnostico" class="py-24 bg-brand-dark relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-lime/10 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-red/10 to-transparent"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="glass rounded-3xl p-8 md:p-12 border border-brand-lime/20 shadow-[0_0_30px_rgba(163,230,53,0.1)]">
+            <div class="glass rounded-3xl p-8 md:p-12 border border-brand-red/20 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl md:text-5xl font-bold mb-4">Solicitar <span class="gradient-text">Diagnóstico Estratégico</span></h2>
                     <p class="text-gray-400 text-lg">Descubra o gap entre como você é visto e como deveria ser visto</p>
                 </div>
 
-                <!-- FORMULÁRIO NETLIFY CONFIGURADO -->
                 <form name="diagnostico" method="POST" data-netlify="true" action="/obrigado.html" class="space-y-6 max-w-xl mx-auto" id="diagnosticoForm">
                     <input type="hidden" name="form-name" value="diagnostico">
-                    <!-- Anti-spam honeypot -->
                     <p class="hidden">
                         <label>Não preencha isso: <input name="bot-field"></label>
                     </p>
@@ -311,35 +312,35 @@
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">Nome completo *</label>
                         <input type="text" name="nome" required 
-                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" 
+                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20 transition-all text-white placeholder-gray-500" 
                                placeholder="Seu nome">
                     </div>
                     
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">Nome da empresa *</label>
                         <input type="text" name="empresa" required 
-                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" 
+                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20 transition-all text-white placeholder-gray-500" 
                                placeholder="Sua empresa">
                     </div>
                     
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">Email corporativo *</label>
                         <input type="email" name="email" required 
-                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" 
+                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20 transition-all text-white placeholder-gray-500" 
                                placeholder="voce@empresa.com">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium mb-2 text-gray-400">WhatsApp (opcional)</label>
                         <input type="tel" name="whatsapp" 
-                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-lime focus:outline-none focus:ring-2 focus:ring-brand-lime/20 transition-all text-white placeholder-gray-500" 
+                               class="w-full px-6 py-4 rounded-xl bg-brand-gray border border-white/10 focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20 transition-all text-white placeholder-gray-500" 
                                placeholder="(21) 99999-9999">
                     </div>
 
                     <button type="submit" id="submitBtn" 
-                            class="w-full bg-brand-lime text-brand-black font-bold text-lg py-5 rounded-xl hover:bg-brand-lime-dark transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(163,230,53,0.3)] flex items-center justify-center gap-2">
+                            class="w-full bg-brand-red text-white font-bold text-lg py-5 rounded-xl hover:bg-brand-red-dark transition-all duration-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(239,68,68,0.3)] flex items-center justify-center gap-2">
                         <span id="btnText">Quero Meu Diagnóstico Grátis →</span>
-                        <svg id="btnLoader" class="hidden animate-spin h-5 w-5 text-brand-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg id="btnLoader" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -361,7 +362,7 @@
                 </form>
 
                 <div class="mt-8 pt-8 border-t border-white/10 text-center">
-                    <p class="text-brand-lime font-semibold mb-2">⚠️ Apenas 3 vagas para diagnóstico esta semana</p>
+                    <p class="text-brand-red font-semibold mb-2">⚠️ Apenas 3 vagas para diagnóstico esta semana</p>
                     <p class="text-sm text-gray-400">Tempo médio de resposta: 4 horas</p>
                 </div>
             </div>
@@ -374,7 +375,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
                     <img src="assets/logo.png" alt="Elmo DG" class="h-8 w-auto" onerror="this.style.display='none'">
-                    <span class="text-xl font-bold">Elmo <span class="text-brand-lime">DG</span></span>
+                    <span class="text-xl font-bold">Elmo <span class="text-brand-red">DG</span></span>
                 </div>
                 
                 <div class="text-gray-500 text-sm text-center md:text-right">
@@ -386,7 +387,6 @@
     </footer>
 
     <script>
-        // Animação suave no botão de submit
         document.getElementById('diagnosticoForm').addEventListener('submit', function(e) {
             const btn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
@@ -398,7 +398,6 @@
             btn.classList.add('opacity-75');
         });
 
-        // Scroll suave para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
