@@ -23,9 +23,8 @@
                             black: '#0a0a0a',
                             dark: '#111111',
                             gray: '#1a1a1a',
-                            red: '#ef4444',         // Vermelho principal
-                            'red-dark': '#dc2626',  // Vermelho escuro
-                            'red-light': '#f87171', // Vermelho claro
+                            red: '#ef4444',
+                            'red-dark': '#dc2626',
                             white: '#ffffff',
                             muted: '#a1a1aa',
                             whatsapp: '#25D366'
@@ -36,16 +35,11 @@
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate'
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' }
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(239, 68, 68, 0.3)' },
-                            '100%': { boxShadow: '0 0 40px rgba(239, 68, 68, 0.6)' }
                         }
                     }
                 }
@@ -78,9 +72,6 @@
         .whatsapp-glow {
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
         }
-        .red-glow {
-            box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
-        }
         .noise::before {
             content: "";
             position: absolute;
@@ -106,6 +97,10 @@
             inset: 0;
             background: rgba(10, 10, 10, 0.75);
             z-index: 1;
+        }
+        /* Esconde o honeypot */
+        .hidden-field {
+            display: none !important;
         }
     </style>
 </head>
@@ -292,7 +287,7 @@
         </div>
     </section>
 
-    <!-- FORMULÁRIO NETLIFY -->
+    <!-- FORMULÁRIO NETLIFY - CORRIGIDO -->
     <section id="diagnostico" class="py-24 bg-brand-dark relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-t from-brand-red/10 to-transparent"></div>
         
@@ -303,10 +298,10 @@
                     <p class="text-gray-400 text-lg">Descubra o gap entre como você é visto e como deveria ser visto</p>
                 </div>
 
-                <form name="diagnostico" method="POST" data-netlify="true" action="/obrigado.html" class="space-y-6 max-w-xl mx-auto" id="diagnosticoForm">
-                    <input type="hidden" name="form-name" value="diagnostico">
-                    <p class="hidden">
-                        <label>Não preencha isso: <input name="bot-field"></label>
+                <!-- FORMULÁRIO NETLIFY SIMPLIFICADO -->
+                <form name="diagnostico" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/sucesso.html" class="space-y-6 max-w-xl mx-auto" id="diagnosticoForm">
+                    <p class="hidden-field">
+                        <label>Não preencha isso se for humano: <input name="bot-field"></label>
                     </p>
                     
                     <div>
