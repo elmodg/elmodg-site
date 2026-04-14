@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum | Lucas Gabriel S. S. Soares - Elmo DG</title>
+    <meta name="description" content="Gerente Comercial & Estrategista de Eficiência Operacional (IA).">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0a0a0a',
+                            surface: '#141414',
+                            border: '#262626',
+                            text: '#FFFFFF',
+                            textMuted: '#A3A3A3'
+                        },
+                        elmo: {
+                            red: '#E60000',
+                            redHover: '#CC0000',
+                            yellow: '#FFE600'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .glass-nav { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E60000; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans selection:bg-elmo-red selection:text-white pb-20">
+
+    <nav class="glass-nav fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <img src="./logo low.png" alt="Elmo DG Logo" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.outerHTML='<span class=\'text-2xl font-black tracking-tighter text-white\'>ELMO<span class=\'text-elmo-red\'>DG</span></span>'">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-xs font-semibold tracking-widest text-brand-textMuted hover:text-white transition-colors uppercase flex items-center gap-2">
+                        <span>&larr;</span> Voltar ao Site
+                    </a>
+                    <a href="mailto:promo@elmodg.com.br" class="bg-elmo-red text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-elmo-redHover transition-all duration-300">
+                        Entrar em Contato
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative pt-32 lg:pt-40 max-w-7xl mx-auto px-6 lg:px-8">
+        
+        <div class="absolute top-40 left-1/4 -translate-x-1/2 w-[600px] h-[300px] bg-elmo-red/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+            
+            <aside class="lg:col-span-4 space-y-10">
+                
+                <div class="reveal rounded-2xl overflow-hidden bg-brand-surface border border-brand-border p-2">
+                    <div class="rounded-xl overflow-hidden relative group aspect-[4/5] bg-brand-bg">
+                        <img src="./perfil.jpg" alt="Lucas Gabriel Soares" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" onerror="this.src='https://placehold.co/600x800/141414/262626?text=FOTO+AQUI';">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none"></div>
+                    </div>
+                </div>
+
+                <div class="reveal space-y-4">
+                    <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Contato & Dados</h3>
+                    <ul class="space-y-3 text-sm font-medium text-brand-textMuted">
+                        <li class="flex items-center gap-3"><span class="w-4 h-4 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-[8px] text-white">📍</span> São João de Meriti, RJ</li>
+                        <li class="flex items-center gap-3"><span class="w-4 h-4 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-[8px] text-white">📱</span> (21) 99216-6374</li>
+                        <li class="flex items-center gap-3"><span class="w-4 h-4 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-[8px] text-white">✉️</span> promo@elmodg.com.br</li>
+                        <li class="flex items-center gap-3"><span class="w-4 h-4 rounded-full bg-brand-surface border border-brand-border flex items-center justify-center text-[8px] text-white">🌐</span> elmodg.com.br</li>
+                        <li class="flex items-center gap-3 mt-4 pt-4 border-t border-brand-border">Nascimento: 04/01/1983 | CNH: B</li>
+                    </ul>
+                </div>
+
+                <div class="reveal space-y-4">
+                    <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Stack IA & Competências</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Engenharia de Prompt</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Automação Administrativa</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Gemini Pro/Flash</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">ChatGPT Enterprise</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Workflows</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">COT / Few-Shot</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">LLM Integration</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Supabase/No-code</span>
+                    </div>
+                </div>
+
+                <div class="reveal space-y-4">
+                    <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Certificações</h3>
+                    <div class="bg-brand-surface p-4 rounded-xl border border-brand-border">
+                        <h4 class="text-white font-bold text-sm">Engenharia de Prompt Eficaz</h4>
+                        <p class="text-brand-textMuted text-xs mt-1">Escola Virtual. Gov (EV.G)</p>
+                        <div class="mt-2 inline-block px-2 py-1 bg-elmo-red/10 text-elmo-red border border-elmo-red/20 rounded text-xs font-bold">Nota Máxima 100%</div>
+                    </div>
+                    <div class="bg-brand-surface p-4 rounded-xl border border-brand-border mt-2">
+                        <h4 class="text-white font-bold text-sm">Especialista em IA</h4>
+                        <p class="text-brand-textMuted text-xs mt-1">Foco em Eficiência Operacional</p>
+                    </div>
+                </div>
+
+            </aside>
+
+            <section class="lg:col-span-8 space-y-12">
+                
+                <div class="reveal border-b border-brand-border pb-8">
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-2 leading-tight uppercase">
+                        Lucas Gabriel <br><span class="text-brand-textMuted">S. S. Soares</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-medium text-elmo-red mt-4">Gerente Comercial & Estrategista de Eficiência Operacional (IA)</h2>
+                </div>
+
+                <div class="reveal space-y-4">
+                    <h3 class="text-xs font-bold text-brand-textMuted uppercase tracking-widest">Resumo Profissional</h3>
+                    <p class="text-lg text-brand-textMuted font-medium leading-relaxed">
+                        Gerente Comercial com sólida trajetória de mais de <strong class="text-white">10 anos no setor de telecomunicações e varejo</strong>, aliada a especialização prática em Engenharia de Prompt.
+                    </p>
+                    <p class="text-lg text-brand-textMuted font-medium leading-relaxed">
+                        Especialista em identificar ineficiências administrativas e implementar soluções de <strong class="text-white">IA Generativa para reduzir custos fixos e automatizar processos de back-office</strong>. Foco total em escalar resultados comerciais através de operações "lean" (enxutas) e tecnologia.
+                    </p>
+                </div>
+
+                <div class="reveal bg-brand-surface border border-elmo-red/30 rounded-2xl p-6 md:p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-elmo-red group-hover:w-2 transition-all duration-300"></div>
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-elmo-red" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                        O Diferencial: Gestão com IA
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3">
+                            <span class="text-elmo-red mt-1">▹</span>
+                            <p class="text-sm text-brand-textMuted"><strong class="text-white">Automação Administrativa:</strong> Substituição de processos manuais por comandos de IA, permitindo que a equipe comercial foque 100% em vendas.</p>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-elmo-red mt-1">▹</span>
+                            <p class="text-sm text-brand-textMuted"><strong class="text-white">Visão de Custo:</strong> Expertise em analisar organogramas e sugerir onde a IA pode evitar contratações administrativas desnecessárias (Enxugamento de Cargos - Redução de 60% em Burocracia).</p>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-elmo-red mt-1">▹</span>
+                            <p class="text-sm text-brand-textMuted"><strong class="text-white">Engenharia de Prompt:</strong> Domínio de técnicas para extrair máxima precisão do Gemini e ChatGPT.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal space-y-6">
+                    <h3 class="text-xs font-bold text-brand-textMuted uppercase tracking-widest border-b border-brand-border pb-2 mb-6">Experiência Profissional</h3>
+                    
+                    <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-white">Fundador & Estrategista de Operações com IA</h4>
+                            <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0">2022 - Atual</span>
+                        </div>
+                        <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-4">Elmo DG</h5>
+                        <p class="text-sm text-brand-textMuted mb-3">Consultoria focada em Eficiência Operacional e automação de processos administrativos.</p>
+                        <ul class="text-sm text-brand-textMuted space-y-2">
+                            <li><strong class="text-white">Enxugamento Administrativo:</strong> Agentes de IA para substituir cargos administrativos (triagem de leads, automação de e-mails, relatórios).</li>
+                            <li><strong class="text-white">Workflows IA:</strong> Criação de fluxos que aceleram produção de identidades visuais e branding, reduzindo custo operacional.</li>
+                            <li><strong class="text-white">Consultoria:</strong> Auxílio a empresas na implementação de IA para reduzir carga horária burocrática em até 60%.</li>
+                        </ul>
+                    </article>
+
+                    <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-white">Analista de Vendas - Alta Performance</h4>
+                            <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0">2007 - 2017 (10 anos)</span>
+                        </div>
+                        <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-4">CLARO S.A.</h5>
+                        <ul class="text-sm text-brand-textMuted space-y-2">
+                            <li>• Prospecção e manutenção de carteira volumosa B2B e B2C.</li>
+                            <li>• Fechamento de contratos complexos e gestão de relacionamento (Pós-venda).</li>
+                            <li>• Experiência em metas agressivas e KPIs em multinacional.</li>
+                        </ul>
+                    </article>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                            <div class="flex flex-col mb-2">
+                                <h4 class="text-lg font-bold text-white">Vendedor Interno</h4>
+                                <span class="text-xs text-brand-textMuted mt-1">2019 - 2020</span>
+                            </div>
+                            <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-3">CASAS BAHIA</h5>
+                            <p class="text-sm text-brand-textMuted">Varejo de alto fluxo e negociação direta.</p>
+                        </article>
+
+                        <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                            <div class="flex flex-col mb-2">
+                                <h4 class="text-lg font-bold text-white">Vendedor</h4>
+                                <span class="text-xs text-brand-textMuted mt-1">2017 - 2018</span>
+                            </div>
+                            <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-3">PAGGO</h5>
+                            <p class="text-sm text-brand-textMuted">Prospecção de serviços financeiros B2B.</p>
+                        </article>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
