@@ -10,7 +10,6 @@
     <meta property="og:url" content="https://elmodg.com.br/curriculo.html">
     <meta property="og:title" content="Curriculum | Lucas Gabriel S. S. Soares - Elmo DG">
     <meta property="og:description" content="Gerente Comercial & Estrategista de Eficiência Operacional (IA). Clique para visualizar a trajetória completa.">
-    
     <meta property="og:image" content="https://elmodg.com.br/sharescreen.jpg">
     <meta property="og:image:secure_url" content="https://elmodg.com.br/sharescreen.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -52,15 +51,21 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        /* Animação Flutuante Elegante */
+        /* Animação Flutuante Avatar */
         @keyframes levitate {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
             100% { transform: translateY(0px); }
         }
-        .avatar-float {
-            animation: levitate 6s ease-in-out infinite;
+        .avatar-float { animation: levitate 6s ease-in-out infinite; }
+
+        /* Animação Luz Neon Fundo */
+        @keyframes ambient-glow {
+            0%, 100% { opacity: 0.04; transform: scale(1); }
+            50% { opacity: 0.12; transform: scale(1.1); }
         }
+        .neon-glow-1 { animation: ambient-glow 8s ease-in-out infinite; }
+        .neon-glow-2 { animation: ambient-glow 12s ease-in-out infinite; animation-delay: -4s; }
 
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -69,17 +74,20 @@
         ::-webkit-scrollbar-thumb:hover { background: #E60000; }
     </style>
 </head>
-<body class="bg-brand-bg text-brand-text font-sans selection:bg-elmo-red selection:text-white pb-20">
+<body class="bg-brand-bg text-brand-text font-sans selection:bg-elmo-red selection:text-white pb-20 relative min-h-screen overflow-x-hidden">
+
+    <div class="fixed top-[-10%] left-[-10%] w-[600px] h-[600px] bg-elmo-red rounded-full blur-[150px] pointer-events-none z-0 neon-glow-1"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[800px] h-[800px] bg-elmo-red rounded-full blur-[180px] pointer-events-none z-0 neon-glow-2"></div>
 
     <nav class="glass-nav fixed w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
                     <a href="index.html">
-                        <img src="./logo low.png" alt="Elmo DG Logo" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.outerHTML='<span class=\'text-2xl font-black tracking-tighter text-white\'>ELMO<span class=\'text-elmo-red\'>DG</span></span>'">
+                        <img src="./logo low.png" alt="Elmo DG Logo" class="h-12 w-auto object-contain relative z-10" onerror="this.onerror=null; this.outerHTML='<span class=\'text-2xl font-black tracking-tighter text-white\'>ELMO<span class=\'text-elmo-red\'>DG</span></span>'">
                     </a>
                 </div>
-                <div class="hidden md:flex items-center gap-8">
+                <div class="hidden md:flex items-center gap-8 relative z-10">
                     <a href="index.html" class="text-xs font-semibold tracking-widest text-brand-textMuted hover:text-white transition-colors uppercase flex items-center gap-2">
                         <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar ao Site
                     </a>
@@ -91,22 +99,20 @@
         </div>
     </nav>
 
-    <main class="relative pt-32 lg:pt-40 max-w-7xl mx-auto px-6 lg:px-8">
+    <main class="relative pt-32 lg:pt-40 max-w-7xl mx-auto px-6 lg:px-8 z-10">
         
-        <div class="absolute top-40 left-1/4 -translate-x-1/2 w-[600px] h-[300px] bg-elmo-red/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
-
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
             
             <aside class="lg:col-span-4 space-y-10">
                 
-                <div class="reveal rounded-2xl overflow-hidden bg-brand-surface border border-brand-border p-2">
-                    <div class="rounded-xl overflow-hidden relative group aspect-[4/5] bg-brand-bg avatar-float shadow-[0_10px_40px_rgba(230,0,0,0.1)]">
+                <div class="reveal rounded-2xl overflow-hidden bg-brand-surface border border-brand-border p-2 relative backdrop-blur-sm bg-brand-surface/80">
+                    <div class="rounded-xl overflow-hidden relative group aspect-[4/5] bg-brand-bg avatar-float shadow-[0_10px_40px_rgba(230,0,0,0.15)]">
                         <img src="./perfil.jpg" alt="Lucas Gabriel Soares" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" onerror="this.src='https://placehold.co/600x800/141414/333?text=AGUARDANDO+FOTO+REAL';">
                         <div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl pointer-events-none"></div>
                     </div>
                 </div>
 
-                <div class="reveal space-y-4">
+                <div class="reveal space-y-4 backdrop-blur-sm bg-brand-bg/50 p-4 rounded-xl border border-brand-border/50">
                     <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Contato & Dados</h3>
                     <ul class="space-y-3.5 text-sm font-medium text-brand-textMuted">
                         <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brand-textMuted"></i> São João de Meriti, RJ</li>
@@ -119,20 +125,20 @@
                 <div class="reveal space-y-4">
                     <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Stack IA & Competências</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-elmo-yellow"></i> Engenharia de Prompt</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Microsoft Foundry</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Azure Custom Vision</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">RAG Solutions</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">ChatGPT Enterprise</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Gemini Pro/Flash</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Supabase/No-code</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-elmo-yellow"></i> Engenharia de Prompt</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full">Microsoft Foundry</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full">Azure Custom Vision</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full">RAG Solutions</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full">ChatGPT Enterprise</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full">Gemini Pro/Flash</span>
+                        <span class="px-3 py-1 bg-brand-surface/80 backdrop-blur-sm border border-brand-border text-white text-xs font-medium rounded-full">Supabase/No-code</span>
                     </div>
                 </div>
 
                 <div class="reveal space-y-6">
                     <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Reconhecimento & IA</h3>
                     
-                    <div class="bg-brand-surface p-5 rounded-xl border border-elmo-yellow/30 relative overflow-hidden group hover:border-elmo-yellow transition-colors duration-300">
+                    <div class="bg-brand-surface/80 backdrop-blur-sm p-5 rounded-xl border border-elmo-yellow/30 relative overflow-hidden group hover:border-elmo-yellow transition-colors duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-elmo-yellow/5 to-transparent"></div>
                         <div class="relative z-10 flex items-start gap-4">
                             <i data-lucide="award" class="w-10 h-10 text-elmo-yellow mt-1"></i>
@@ -160,7 +166,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-brand-surface p-4 rounded-xl border border-brand-border mt-6">
+                    <div class="bg-brand-surface/80 backdrop-blur-sm p-4 rounded-xl border border-brand-border mt-6">
                         <h4 class="text-white font-bold text-sm">Engenharia de Prompt Eficaz</h4>
                         <p class="text-brand-textMuted text-xs mt-1">Escola Virtual. Gov (EV.G)</p>
                         <div class="mt-2 inline-block px-2 py-1 bg-elmo-red/10 text-elmo-red border border-elmo-red/20 rounded text-xs font-bold">Nota Máxima 100%</div>
@@ -172,7 +178,7 @@
             <section class="lg:col-span-8 space-y-12">
                 
                 <div class="reveal border-b border-brand-border pb-8">
-                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-2 leading-tight uppercase">
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-2 leading-tight uppercase relative inline-block">
                         Lucas Gabriel <br><span class="text-brand-textMuted">S. S. Soares</span>
                     </h1>
                     <h2 class="text-xl md:text-2xl font-medium text-elmo-red mt-4 flex items-center gap-3"><i data-lucide="briefcase" class="w-6 h-6"></i> Gerente Comercial & Estrategista IA</h2>
@@ -188,12 +194,12 @@
                     </p>
                 </div>
 
-                <div class="reveal bg-brand-surface border border-elmo-red/30 rounded-2xl p-6 md:p-8 relative overflow-hidden group">
+                <div class="reveal bg-brand-surface/80 backdrop-blur-md border border-elmo-red/30 rounded-2xl p-6 md:p-8 relative overflow-hidden group shadow-[0_0_40px_rgba(230,0,0,0.05)]">
                     <div class="absolute top-0 left-0 w-1 h-full bg-elmo-red group-hover:w-2 transition-all duration-300"></div>
                     <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
                         <i data-lucide="cpu" class="w-5 h-5 text-elmo-red"></i> O Diferencial: Gestão com IA
                     </h3>
-                    <ul class="space-y-4">
+                    <ul class="space-y-4 relative z-10">
                         <li class="flex gap-3">
                             <i data-lucide="chevron-right" class="w-4 h-4 text-elmo-red mt-0.5 flex-shrink-0"></i>
                             <p class="text-sm text-brand-textMuted"><strong class="text-white">Automação Administrativa:</strong> Substituição de processos manuais por comandos de IA, permitindo que a equipe comercial foque 100% em vendas.</p>
@@ -204,7 +210,7 @@
                         </li>
                         <li class="flex gap-3">
                             <i data-lucide="chevron-right" class="w-4 h-4 text-elmo-red mt-0.5 flex-shrink-0"></i>
-                            <p class="text-sm text-brand-textMuted"><strong class="text-white">Soluções RAG & Prompt Flow:</strong> Implantação de chats baseados em dados próprios no Microsoft Foundry e domínio de técnicas avançadas em LLMs (Gemini/ChatGPT).</p>
+                            <p class="text-sm text-brand-textMuted"><strong class="text-white">Soluções RAG & Prompt Flow:</strong> Implantação de chats baseados em dados próprios no Microsoft Foundry e domínio de técnicas avançadas em LLMs.</p>
                         </li>
                     </ul>
                 </div>
@@ -212,8 +218,8 @@
                 <div class="reveal space-y-6">
                     <h3 class="text-xs font-bold text-brand-textMuted uppercase tracking-widest border-b border-brand-border pb-2 mb-6">Experiência Profissional</h3>
                     
-                    <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300 relative">
-                         <i data-lucide="zap" class="w-5 h-5 text-elmo-red absolute -top-2.5 -left-2.5 bg-brand-bg px-0.5"></i>
+                    <article class="bg-brand-surface/80 backdrop-blur-sm border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300 relative">
+                         <i data-lucide="zap" class="w-5 h-5 text-elmo-red absolute -top-2.5 -left-2.5 bg-brand-bg px-0.5 rounded-full"></i>
                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                             <h4 class="text-lg font-bold text-white">Fundador & Estrategista de Operações com IA</h4>
                             <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i> 2022 - Atual</span>
@@ -226,7 +232,7 @@
                         </ul>
                     </article>
 
-                    <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300 relative overflow-hidden">
+                    <article class="bg-brand-surface/80 backdrop-blur-sm border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300 relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-40 h-40 bg-elmo-red/5 rounded-full blur-3xl pointer-events-none"></div>
                         
                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-2 relative z-10">
@@ -235,7 +241,7 @@
                         </div>
                         <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-4 relative z-10">CLARO S.A.</h5>
                         
-                        <div class="mt-2 mb-6 bg-brand-bg p-4 rounded-xl border border-elmo-red/30 relative overflow-hidden group hover:border-elmo-red transition-colors duration-300 z-10">
+                        <div class="mt-2 mb-6 bg-brand-bg/80 backdrop-blur-md p-4 rounded-xl border border-elmo-red/30 relative overflow-hidden group hover:border-elmo-red transition-colors duration-300 z-10">
                             <div class="absolute inset-0 bg-gradient-to-r from-elmo-red/5 to-transparent"></div>
                             <div class="relative z-10 flex items-center gap-3">
                                 <i data-lucide="medal" class="w-8 h-8 text-elmo-red"></i>
@@ -254,7 +260,7 @@
                     </article>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                        <article class="bg-brand-surface/80 backdrop-blur-sm border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
                             <div class="flex flex-col mb-2">
                                 <h4 class="text-lg font-bold text-white">Vendedor Interno</h4>
                                 <span class="text-xs text-brand-textMuted mt-1 mb-2 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i> 2019 - 2020</span>
@@ -266,7 +272,7 @@
                             </p>
                         </article>
 
-                        <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                        <article class="bg-brand-surface/80 backdrop-blur-sm border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
                             <div class="flex flex-col mb-2">
                                 <h4 class="text-lg font-bold text-white">Vendedor</h4>
                                 <span class="text-xs text-brand-textMuted mt-1 mb-2 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i> 2017 - 2018</span>
