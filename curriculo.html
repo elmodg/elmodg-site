@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum | Lucas Gabriel S. S. Soares - Elmo DG</title>
     <meta name="description" content="Gerente Comercial & Estrategista de Eficiência Operacional com IA Generativa e Microsoft Foundry. Alta Performance Comprovada.">
-    
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elmodg.com.br/curriculo.html">
+    <meta property="og:title" content="Curriculum | Lucas Gabriel S. S. Soares - Elmo DG">
+    <meta property="og:description" content="Gerente Comercial & Estrategista de Eficiência Operacional (IA). Clique para visualizar a trajetória completa.">
+    <meta property="og:image" content="https://elmodg.com.br/sharescreen.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://elmodg.com.br/curriculo.html">
+    <meta name="twitter:title" content="Curriculum | Lucas Gabriel S. S. Soares - Elmo DG">
+    <meta name="twitter:description" content="Gerente Comercial & Estrategista de Eficiência Operacional (IA & Microsoft).">
+    <meta name="twitter:image" content="https://elmodg.com.br/sharescreen.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -34,6 +46,8 @@
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -60,10 +74,10 @@
                 </div>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="index.html" class="text-xs font-semibold tracking-widest text-brand-textMuted hover:text-white transition-colors uppercase flex items-center gap-2">
-                        <span>&larr;</span> Voltar ao Site
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar ao Site
                     </a>
-                    <a href="mailto:promo@elmodg.com.br" class="bg-elmo-red text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-elmo-redHover transition-all duration-300">
-                        Entrar em Contato
+                    <a href="mailto:promo@elmodg.com.br" class="bg-elmo-red text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-elmo-redHover transition-all duration-300 flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Entrar em Contato
                     </a>
                 </div>
             </div>
@@ -77,7 +91,6 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
             
             <aside class="lg:col-span-4 space-y-10">
-                
                 <div class="reveal rounded-2xl overflow-hidden bg-brand-surface border border-brand-border p-2">
                     <div class="rounded-xl overflow-hidden relative group aspect-[4/5] bg-brand-bg">
                         <img src="./perfil.jpg" alt="Lucas Gabriel Soares" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" onerror="this.src='https://placehold.co/600x800/141414/333?text=AGUARDANDO+FOTO+REAL';">
@@ -87,58 +100,35 @@
 
                 <div class="reveal space-y-4">
                     <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Contato & Dados</h3>
-                    <ul class="space-y-3 text-sm font-medium text-brand-textMuted">
-                        <li>📍 São João de Meriti, RJ</li>
-                        <li>📱 (21) 99216-6374</li>
-                        <li>✉️ promo@elmodg.com.br</li>
-                        <li>🌐 elmodg.com.br</li>
+                    <ul class="space-y-3.5 text-sm font-medium text-brand-textMuted">
+                        <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brand-textMuted"></i> São João de Meriti, RJ</li>
+                        <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4 text-brand-textMuted"></i> (21) 99216-6374</li>
+                        <li class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4 text-brand-textMuted"></i> promo@elmodg.com.br</li>
+                        <li class="flex items-center gap-3"><i data-lucide="globe" class="w-4 h-4 text-brand-textMuted"></i> elmodg.com.br</li>
                     </ul>
                 </div>
 
                 <div class="reveal space-y-4">
                     <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Stack IA & Competências</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Engenharia de Prompt</span>
+                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-elmo-yellow"></i> Engenharia de Prompt</span>
                         <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Microsoft Foundry</span>
                         <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Azure Custom Vision</span>
                         <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">RAG Solutions</span>
-                        <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">COT / Few-Shot</span>
                         <span class="px-3 py-1 bg-brand-surface border border-brand-border text-white text-xs font-medium rounded-full">Automação Lean</span>
                     </div>
                 </div>
 
                 <div class="reveal space-y-6">
                     <h3 class="text-xs font-bold text-elmo-red uppercase tracking-widest border-b border-brand-border pb-2">Reconhecimento Microsoft & IA</h3>
-                    
                     <div class="bg-brand-surface p-5 rounded-xl border border-elmo-yellow/30 relative overflow-hidden group hover:border-elmo-yellow transition-colors duration-300">
                         <div class="absolute inset-0 bg-gradient-to-r from-elmo-yellow/5 to-transparent"></div>
                         <div class="relative z-10 flex items-start gap-4">
-                            <span class="text-4xl">🏆</span>
+                            <i data-lucide="award" class="w-10 h-10 text-elmo-yellow mt-1"></i>
                             <div>
                                 <h4 class="text-white font-black text-base uppercase tracking-tight">Troféu Microsoft</h4>
                                 <p class="text-elmo-yellow text-sm font-semibold mt-1">Criar modelos de visão com a Visão Personalizada da IA do Azure</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-5">
-                        <div class="space-y-3 border-l-2 border-brand-border pl-4">
-                            <h5 class="text-xs font-bold text-brand-textMuted uppercase tracking-wider flex items-center gap-2">Visão Computacional</h5>
-                            <ul class="space-y-1.5 text-sm text-brand-textMuted font-medium">
-                                <li>Detectar objetos e rostos | Ler texto em imagens</li>
-                            </ul>
-                        </div>
-                        <div class="space-y-3 border-l-2 border-brand-border pl-4">
-                            <h5 class="text-xs font-bold text-brand-textMuted uppercase tracking-wider flex items-center gap-2">Modelos de Linguagem & Foundry</h5>
-                            <ul class="space-y-1.5 text-sm text-brand-textMuted font-medium">
-                                <li>Fluxo de Prompt | Solução RAG | Chat IA Generativo</li>
-                            </ul>
-                        </div>
-                        <div class="space-y-3 border-l-2 border-brand-border pl-4">
-                            <h5 class="text-xs font-bold text-brand-textMuted uppercase tracking-wider flex items-center gap-2">Planejamento & Estratégia</h5>
-                            <ul class="space-y-1.5 text-sm text-brand-textMuted font-medium">
-                                <li>Planejar soluções de IA no Azure</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -146,35 +136,32 @@
             </aside>
 
             <section class="lg:col-span-8 space-y-12">
-                
                 <div class="reveal border-b border-brand-border pb-8">
                     <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-2 leading-tight uppercase">
                         Lucas Gabriel <br><span class="text-brand-textMuted">S. S. Soares</span>
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-medium text-elmo-red mt-4">Gerente Comercial & Estrategista de Eficiência Operacional (IA & Microsoft Foundry)</h2>
+                    <h2 class="text-xl md:text-2xl font-medium text-elmo-red mt-4 flex items-center gap-3"><i data-lucide="briefcase" class="w-6 h-6"></i> Gerente Comercial & Estrategista IA</h2>
                 </div>
 
                 <div class="reveal space-y-4">
                     <h3 class="text-xs font-bold text-brand-textMuted uppercase tracking-widest">Resumo Profissional</h3>
                     <p class="text-lg text-brand-textMuted font-medium leading-relaxed">
-                        Gerente Comercial com sólida trajetória de mais de <strong class="text-white">10 anos no setor de telecomunicações e varejo</strong>, agora especializado na implementação prática de IA Generativa.
-                    </p>
-                    <p class="text-lg text-brand-textMuted font-medium leading-relaxed">
-                        Especialista em identificar ineficiências administrativas e implementar soluções baseadas em <strong class="text-white">Microsoft Azure IA, Microsoft Foundry (RAG e Prompt Flow)</strong> para reduzir custos fixos e automatizar processos. Foco total em escalar resultados comerciais através de operações enxutas ("lean") guiadas por tecnologia de ponta.
+                        Gerente Comercial com sólida trajetória de mais de <strong class="text-white">10 anos no setor de telecomunicações e varejo</strong>, agora especializado na implementação prática de IA Generativa e Microsoft Foundry.
                     </p>
                 </div>
 
                 <div class="reveal space-y-6">
                     <h3 class="text-xs font-bold text-brand-textMuted uppercase tracking-widest border-b border-brand-border pb-2 mb-6">Experiência Profissional</h3>
                     
-                    <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
+                    <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300 relative">
+                         <i data-lucide="zap" class="w-5 h-5 text-elmo-red absolute -top-2.5 -left-2.5 bg-brand-bg px-0.5"></i>
                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                             <h4 class="text-lg font-bold text-white">Fundador & Estrategista de Operações com IA</h4>
-                            <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0">2022 - Atual</span>
+                            <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i> 2022 - Atual</span>
                         </div>
                         <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-4">Elmo DG</h5>
                         <ul class="text-sm text-brand-textMuted space-y-2">
-                            <li>• Implementação de Workflows IA e Engenharia de Prompt para reduzir custo operacional burocrático.</li>
+                            <li>• Implementação de Workflows IA e Engenharia de Prompt para reduzir custo operacional.</li>
                             <li>• Consultoria para enxugamento de cargos administrativos através de automação (redução de até 60% na carga horária burocrática).</li>
                         </ul>
                     </article>
@@ -185,14 +172,14 @@
                         
                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-2 relative z-10">
                             <h4 class="text-lg font-bold text-white">Analista de Vendas - Alta Performance</h4>
-                            <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0">2007 - 2017 (10 anos)</span>
+                            <span class="text-xs font-bold bg-brand-bg px-3 py-1 rounded-full text-brand-textMuted border border-brand-border mt-2 md:mt-0 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i> 2007 - 2017</span>
                         </div>
                         <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide mb-4 relative z-10">CLARO S.A.</h5>
                         
                         <div class="mt-2 mb-6 bg-brand-bg p-4 rounded-xl border border-elmo-red/30 relative overflow-hidden group hover:border-elmo-red transition-colors duration-300 z-10">
                             <div class="absolute inset-0 bg-gradient-to-r from-elmo-red/5 to-transparent"></div>
                             <div class="relative z-10 flex items-center gap-3">
-                                <span class="text-3xl">🏆</span>
+                                <i data-lucide="medal" class="w-8 h-8 text-elmo-red"></i>
                                 <div>
                                     <h4 class="text-white font-bold text-sm uppercase tracking-tight">Melhor Vendedor - Loja Ipanema</h4>
                                     <p class="text-elmo-red text-xs font-semibold">Premiação Lojas.com • CLARO S.A. • 2010</p>
@@ -202,23 +189,8 @@
 
                         <ul class="text-sm text-brand-textMuted space-y-1.5 relative z-10">
                             <li>• Prospecção e manutenção de carteira volumosa B2B e B2C.</li>
-                            <li>• Fechamento de contratos complexos e gestão de relacionamento (Pós-venda).</li>
                         </ul>
                     </article>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
-                            <h4 class="text-lg font-bold text-white">Vendedor Interno</h4>
-                            <span class="text-xs text-brand-textMuted mt-1 mb-2 block">2019 - 2020</span>
-                            <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide">CASAS BAHIA</h5>
-                        </article>
-                        <article class="bg-brand-surface border border-brand-border p-6 rounded-2xl hover:border-brand-textMuted transition-colors duration-300">
-                            <h4 class="text-lg font-bold text-white">Vendedor</h4>
-                            <span class="text-xs text-brand-textMuted mt-1 mb-2 block">2017 - 2018</span>
-                            <h5 class="text-elmo-red text-sm font-bold uppercase tracking-wide">PAGGO</h5>
-                        </article>
-                    </div>
-
                 </div>
             </section>
         </div>
@@ -226,6 +198,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
             const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
